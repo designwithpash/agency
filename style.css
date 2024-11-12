@@ -100,7 +100,6 @@ p {
     gap: 10px;
     align-items: center;
     cursor:pointer;
-    white-space: nowrap;
 }
 .click-button{
 border-radius: 100px;
@@ -163,7 +162,6 @@ background: var(--Text-color, #0E1E32);
     align-items: center;
     justify-items: center;
     gap: 50px;
-  
 }
 
 .slider-button{
@@ -174,13 +172,7 @@ background: var(--Text-color, #0E1E32);
     flex-wrap: wrap;
 
 }
-.slider-button::-webkit-scrollbar{
-    display: none;
-}
 
-.slide2{
-    width: 20%;
-}
 
 .slider-images{
     /* display: flex; */
@@ -203,18 +195,37 @@ background: var(--Text-color, #0E1E32);
 
   }
 
-.swiper-slide{
+.swiper2 {
     display: flex;
- 
+    height: auto;
+    position: relative;
+    margin-inline: 0;
+    max-width: 2000px;
+    overflow: hidden;
+
+  }
+
+
+.swiper .swiper-slide{
+    display: flex;
+    background-color: #efefef;
     font-size: 40px;
     border-radius: 10px;
     align-items: center;
     justify-content: center;
     object-fit: contain;
+    filter: drop-shadow(10px 10px 10px #00000010);
 
 }
+.swiper-slide2{
+    width: auto;
+    display: flex;
+    background-color: #efefef;
+    font-size: 40px;
 
-.swiper-slide img{
+
+}
+.swiper .swiper-slide img{
     width: 100%;
     object-fit: cover;
     height: 100%;
@@ -436,18 +447,21 @@ box-shadow: 0px 23.276px 38.405px 8.728px rgba(255, 0, 77, 0.04);
 
 }
 
+.active{
+    background-color: #0E1E32;
+    color: #FFF;
+    transition: background-color 0.2s ease-in;
+}
 
 .allcards{
     display: flex;
-    gap: 60px;
+  
     /* flex-wrap: wrap; */
 }
 
 .testi-cards{
 display: flex;
-width: 655px;
 flex-wrap: wrap;
-
 padding: 30px;
 justify-content: center;
 align-items: center;
@@ -471,7 +485,7 @@ box-shadow: 0px 22.421px 36.995px 8.408px rgba(85, 83, 91, 0.06);
 }
 
 .testi-right-content{
-    width: 300px;
+    width: auto;
     height: auto;
     background: var(--primary-color);
     border-radius: 30px;
@@ -481,14 +495,64 @@ box-shadow: 0px 22.421px 36.995px 8.408px rgba(85, 83, 91, 0.06);
 .testi-right-content img{
     scale: 1.05;
 }
+.horizontal-text h2{
+    text-align: left;
+    margin-top: 0;
+   
+}
+.pricing-section{
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+    
+#headline{
+    max-width: 30%;
+}
+
+.horizontal-text{
+    display: flex;
+   
+    align-items: center;
+    gap:30px;
+   
+ 
+}
+.vertical-breakline{
+    height: 100px;
+    width: 10px;
+    background: var(--primary-color);
+}
+
+#paragraph-right{
+    max-width: 60%;
+}
+
+
+
+
+
 
 
 @media (max-width:728px) {
  
     h1 {
-        font-size: 3rem;
+        font-size: 3.5rem;
+    }
+    h2{
+        font-size: 2.5rem;
+    }
+    h3{
+        font-size: 1.5rem;
     }
 
+    .freelancerBox{
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 30px;
+        min-width: 70%;
+    }
     .leftContent {
         max-width: 100%;
     }
@@ -504,13 +568,29 @@ box-shadow: 0px 22.421px 36.995px 8.408px rgba(85, 83, 91, 0.06);
     #small-blue{
         display: none;
     }
-
+    .subhero-banner{
+        width: 100%;
+        box-sizing: border-box;
+        
+    }
+  
     .compBox{
         width: 100%;
+        overflow-x: auto;
+        box-sizing: border-box;
+        background: none;
+        filter: none;
+        padding: 0;
+        border-radius: 0;
 
     }
+
+    
     .comparison-bg{
-        width: 100%;
+        padding: 30;
+    }
+    .compBox::-webkit-scrollbar{
+        display: none;
     }
     .swiper {
         max-width: 100%;
@@ -533,7 +613,7 @@ box-shadow: 0px 22.421px 36.995px 8.408px rgba(85, 83, 91, 0.06);
         height: 0%;
     }
     
-
+      
       .secondary-button{
         width: auto;
         height: 100%;
@@ -552,15 +632,33 @@ box-shadow: 0px 22.421px 36.995px 8.408px rgba(85, 83, 91, 0.06);
     width: 100%;
 }
 
+.subhero-banner{
+    justify-content: center;
+    align-items: center;
+    gap:0;
+}
+.subhero-banner h2{
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.subhero-banner img{
+    display: none;
+}
+
 .leftContent{
     width: 100%;
 }
 .slider-images{
     width: 100%;
 }
+.swiper2{
+    width: 100%;
+    max-width: none;
+}
 .allcards{
     box-sizing: border-box;
-    overflow: hidden;
+    
     width: 100%;
   
 }

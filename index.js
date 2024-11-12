@@ -1,4 +1,4 @@
-var swiper1 = new Swiper('.swiper1', {
+const swiper = new Swiper('.swiper', {
     effect: "coverflow",
     spaceBetween: 30,
     grabCursor: true,
@@ -44,11 +44,3 @@ var swiper1 = new Swiper('.swiper1', {
 
     },
 });
-
-var swiper2= new Swiper('.swiper2',{
-    swiperClass: '.secondaryButton',
-    slidesPerView: auto,
-    freemode: true,
-    spaceBetween: 20,
-    grabCursor: true,
-})
