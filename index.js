@@ -46,7 +46,7 @@ var swiper = new Swiper('.swiper', {
 });
 
 var swipertwo = new Swiper('.swiper2',{
-
+ 
   spaceBetween: 30,
   grabCursor: true,
   centeredSlides: true,
@@ -88,11 +88,35 @@ var swipertwo = new Swiper('.swiper2',{
 
 })
 
-$(".secondary-button").on('click', (evt) => {
-  $(".secondary-button").removeClass('active');
-  $(evt.currentTarget).addClass('active');
-  $(evt.currentTarget).css({
-    "transition":"0.5 ease-in"
-  })
+var qlength = document.getElementsByClassName("questions").length;
+var qus = document.getElementsByClassName("questions");
 
-})
+
+console.log(qlength);
+console.log(qus);
+
+for (let i = 0; i < qlength; i++) { // Use let instead of var for block scope
+  qus[i].addEventListener("click", function () {
+    // Collapse all other items
+    for (let j = 0; j < qus.length; j++) {
+      if (j !== i) {
+        let otherAnswer = qus[j].nextElementSibling;
+        let otherIcon=qus[j].querySelector("#add");
+        otherAnswer.style.display = "none"; // Collapse other answers
+        otherIcon.src="./public/images/add.svg"
+        
+      }
+    }
+
+    // Toggle the current answer
+    const answers = this.nextElementSibling;
+    const icon=this.querySelector("#add");
+    if (answers.style.display === "block") {
+      answers.style.display = "none"; // Hide if already visible
+      icon.src="./public/images/minus.svg"
+    } else {
+      answers.style.display = "block"; // Show if hidden
+      icon.src="./public/images/add.svg"
+    }
+  });
+}
