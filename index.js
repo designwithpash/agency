@@ -113,10 +113,25 @@ for (let i = 0; i < qlength; i++) { // Use let instead of var for block scope
     const icon=this.querySelector("#add");
     if (answers.style.display === "block") {
       answers.style.display = "none"; // Hide if already visible
-      icon.src="./public/images/minus.svg"
+      icon.src="./public/images/add.svg"
     } else {
       answers.style.display = "block"; // Show if hidden
-      icon.src="./public/images/add.svg"
+      icon.src="./public/images/minus.svg"
     }
   });
 }
+
+var expand=document.querySelector(".rm")
+var col=document.querySelector(".right-column")
+console.log(col)
+expand.addEventListener("click", function(){
+  if(col.style.display==="none"){
+    col.style.display="flex"
+    expand.innerHTML="Collapse"
+  }
+  else{
+    col.style.display="none"
+    expand.innerHTML="Expand"
+  }
+
+})
