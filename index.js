@@ -135,3 +135,62 @@ expand.addEventListener("click", function(){
   }
 
 })
+
+var tgl = document.querySelectorAll(".toggleButton button");
+var comp = document.querySelector(".compBox"); // Assuming this is the element to scroll
+console.log(tgl);
+
+for (let i = 0; i < tgl.length; i++) {
+  tgl[i].addEventListener("click", function () {
+    console.log(this);
+
+    // Remove active class from all buttons and add to the clicked one
+    tgl.forEach(button => button.classList.remove("active-tg"));
+    this.classList.add("active-tg");
+
+    // Scroll logic based on button clicked
+    if (this.classList.contains("tgTwo")) {
+      // Scroll to the right with smooth behavior
+      comp.scrollTo({
+        left: comp.scrollLeft + 999, // Adjust scroll amount as needed
+        behavior: "smooth",
+      });
+    } else {
+      // Scroll to the left with smooth behavior
+      comp.scrollTo({
+        left: comp.scrollLeft - 999, // Adjust scroll amount as needed
+        behavior: "smooth",
+      });
+    }
+  });
+}
+
+var prc = document.querySelector(".plans"); // Assuming this is the element to scroll
+
+for (let i = 0; i < tgl.length; i++) {
+  tgl[i].addEventListener("click", function () {
+    console.log(this);
+
+    // Remove active class from all buttons and add to the clicked one
+    tgl.forEach(button => button.classList.remove("active-tg"));
+    this.classList.add("active-tg");
+
+    // Scroll logic based on button clicked
+    if (this.classList.contains("tgTwo")) {
+      // Scroll to the right with smooth behavior
+      prc.scrollTo({
+        left: prc.scrollLeft + 999, // Adjust scroll amount as needed
+        behavior: "smooth",
+      });
+    } else {
+      // Scroll to the left with smooth behavior
+      prc.scrollTo({
+        left: prc.scrollLeft - 999, // Adjust scroll amount as needed
+        behavior: "smooth",
+      });
+    }
+  });
+}
+
+
+
