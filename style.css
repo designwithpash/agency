@@ -1329,8 +1329,8 @@ p {
     .footer{
         margin-top: 1rem;
     }
-    .footer-all{
-        gap: 3rem;
+   .footer-all{
+        gap: 2rem;
     }
     .footer-content{
         max-width: 100%;
@@ -1341,13 +1341,17 @@ p {
 
     .footer-legal{
         text-align: center;
+        margin: 0;
     }
     .footer-terms{
         flex-direction: row;
         flex-wrap: wrap;
         text-align: center;
-        gap: 3rem;
+        gap: 2rem;
         justify-content: center;
+    }
+    .footer-terms p{
+        margin: 0;
     }
 }   
     
