@@ -1069,7 +1069,7 @@ p {
     }
     .compBox {
         width: 100%;
-        overflow-x: auto;
+       overflow-x: auto;
         box-sizing: border-box;
         background: none;
         filter: none;
@@ -1089,6 +1089,7 @@ p {
         padding-bottom: 1rem;
         justify-items: center;
     }
+   
     .toggleButton{
         display: flex;
         background-color: var(--Text-color);
@@ -1098,6 +1099,7 @@ p {
         border-radius: 5rem;
         align-self: center;
     }
+    
     .tgOne{
         padding: 10px 20px 10px 20px;
         border-radius: 2rem;
