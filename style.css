@@ -1082,7 +1082,10 @@ p {
     .compcontent{
         margin-top: 1rem;
     }
-
+    .tglwrap{
+        display: flex;
+        justify-content: center;
+    }
     .comparison-bg {
         padding: 0;
         padding-top: 1rem;
