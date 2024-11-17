@@ -871,6 +871,7 @@ p {
 }
 .answers{
     display: none;
+    padding: 1rem;
 }
 .questions{
     display: flex;
