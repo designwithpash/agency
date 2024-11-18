@@ -732,6 +732,7 @@ h1 {
 .dontOffer {
     text-align: center;
     justify-items: flex-start;
+ 
     border: 3px solid var(--Text-color, #0E1E32);
     padding: 50px;
     border-radius: 30px;
@@ -1005,6 +1006,104 @@ p {
 .footer-terms p{
     margin: 0;
 }
+
+
+
+
+@media (min-width:1200px) and (max-width:1450px){
+
+    #blue{
+        height: 15rem;
+    }
+.swiper{
+    height: auto;
+}
+#pink-left {
+    display: none;
+}
+
+
+}
+
+
+
+@media (min-width:729px) and (max-width:1199px){
+
+    .leftContent{
+        max-width: 100%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .leftContent p{
+        max-width: 80%;
+    }
+    
+    .primary-button{
+        padding: 1rem 5rem 1rem 5rem;
+    }
+
+    .slider-button{
+        justify-content: center;
+    }
+    .subhero-banner {
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+        width: 100%;
+    }
+
+    .subhero-banner h2 {
+        font-size: 2.5rem;
+        margin: 0;
+    }
+    .subhero-banner>div{
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    #blue {
+        display: none;
+    }
+
+    #pink-left {
+        display: none;
+    }
+
+    #pink-right {
+        display: none;
+    }
+
+    #small-blue {
+        display: none;
+    }
+    .dontOffer{
+        margin:0;
+    }
+    .subhero-banner img {
+        display: none;
+    }
+    .compBox{
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .compcontent{
+        justify-content: center;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width:728px) {
 
     h1 {
@@ -1102,7 +1201,7 @@ p {
         align-self: center;
     }
     
-    .tgOne{
+    .left{
         padding: 10px 20px 10px 20px;
         border-radius: 2rem;
         background: none;
@@ -1112,14 +1211,24 @@ p {
         font-weight: 700;
     }
 
-    .tgTwo{
+    .right{
+        padding: 10px 20px 10px 20px;
+        border-radius: 2rem;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1rem;
+        font-weight: 700;
         display: flex;
+        justify-content: center;
         align-items: center;
-        gap: 5px;
+        gap: 10px;
     }
     .active-tg{
         background: white;
         color: var(--Text-color);
+        transition: background-color 0.3s ease, color 0.3s ease;
+        opacity: 1;
     }
     .compBox::-webkit-scrollbar {
         display: none;
@@ -1315,6 +1424,7 @@ p {
     .left-column{
         max-width: 100%;
         align-items: center;
+        justify-content: center;
     }
     .faq-column{
         flex-wrap: wrap;
@@ -1329,6 +1439,11 @@ p {
        gap: 3rem;
         
     }
+    .faq-item{
+        justify-content: center;
+        align-items: center;
+    }
+  
     .rm{
         display: block;
         width: 100%;

@@ -38,9 +38,10 @@ var swiper = new Swiper('.swiper', {
         
         },
         1024: {
-          slidesPerView: 4,
+          slidesPerView: 5,
           spaceBetween: 50,
         },
+       
 
     },
 });
@@ -136,61 +137,82 @@ expand.addEventListener("click", function(){
 
 })
 
-var tgl = document.querySelectorAll(".toggleButton button");
-var comp = document.querySelector(".compBox"); // Assuming this is the element to scroll
-console.log(tgl);
 
-for (let i = 0; i < tgl.length; i++) {
-  tgl[i].addEventListener("click", function () {
-    console.log(this);
+const buttons = document.querySelectorAll(".toggleButton Button");
+const compContainer = document.querySelector(".compBox");
+const pricingContainer = document.querySelector(".plans");
 
-    // Remove active class from all buttons and add to the clicked one
-    tgl.forEach(button => button.classList.remove("active-tg"));
-    this.classList.add("active-tg");
+const compLeftBtn = document.querySelector(".tglwrap .toggleButton .left");
+const compRightBtn = document.querySelector(".tglwrap .toggleButton .right");
+const pricingLeftBtn = document.querySelector(".pricing-section .toggleButton .left");
+const pricingRightBtn = document.querySelector(".pricing-section .toggleButton .right");
 
-    // Scroll logic based on button clicked
-    if (this.classList.contains("tgTwo")) {
-      // Scroll to the right with smooth behavior
-      comp.scrollTo({
-        left: comp.scrollLeft + 999, // Adjust scroll amount as needed
+// Click listener for buttons
+buttons.forEach((button, i) => {
+  button.addEventListener("click", function () {
+    if (this.classList.contains("left")) {
+      // Scroll left
+      pricingContainer.scrollTo({
+        left: pricingContainer.scrollLeft - 999,
+        behavior: "smooth",
+      });
+    } else if (this.classList.contains("right")) {
+      // Scroll right
+      pricingContainer.scrollTo({
+        left: pricingContainer.scrollLeft + 999,
         behavior: "smooth",
       });
     } else {
-      // Scroll to the left with smooth behavior
-      comp.scrollTo({
-        left: comp.scrollLeft - 999, // Adjust scroll amount as needed
-        behavior: "smooth",
-      });
+      // Toggle "active-tg" for non-scroll buttons
+      buttons.forEach((btn) => btn.classList.remove("active-tg"));
+      this.classList.add("active-tg");
     }
   });
-}
+});
 
-var prc = document.querySelector(".plans"); // Assuming this is the element to scroll
+// Scroll listener for container
+pricingContainer.addEventListener("scroll", function () {
+  if (this.scrollLeft < 100) {
+    pricingLeftBtn.classList.add("active-tg");
+    pricingRightBtn.classList.remove("active-tg");
+  } else {
+    pricingRightBtn .classList.add("active-tg");
+    pricingLeftBtn.classList.remove("active-tg");
+  }
+});
 
-for (let i = 0; i < tgl.length; i++) {
-  tgl[i].addEventListener("click", function () {
-    console.log(this);
 
-    // Remove active class from all buttons and add to the clicked one
-    tgl.forEach(button => button.classList.remove("active-tg"));
-    this.classList.add("active-tg");
 
-    // Scroll logic based on button clicked
-    if (this.classList.contains("tgTwo")) {
-      // Scroll to the right with smooth behavior
-      prc.scrollTo({
-        left: prc.scrollLeft + 999, // Adjust scroll amount as needed
+
+// Scroll listener for compcontainer
+compContainer.addEventListener("scroll", function () {
+  if (this.scrollLeft < 100) {
+    compLeftBtn.classList.add("active-tg");
+    compRightBtn.classList.remove("active-tg");
+  } else {
+    compRightBtn.classList.add("active-tg");
+    compLeftBtn.classList.remove("active-tg");
+  }
+});
+
+buttons.forEach((button, i) => {
+  button.addEventListener("click", function () {
+    if (this.classList.contains("left")) {
+      // Scroll left
+      compContainer.scrollTo({
+        left: compContainer.scrollLeft - 999,
+        behavior: "smooth",
+      });
+    } else if (this.classList.contains("right")) {
+      // Scroll right
+      compContainer.scrollTo({
+        left: compContainer.scrollLeft + 999,
         behavior: "smooth",
       });
     } else {
-      // Scroll to the left with smooth behavior
-      prc.scrollTo({
-        left: prc.scrollLeft - 999, // Adjust scroll amount as needed
-        behavior: "smooth",
-      });
+      // Toggle "active-tg" for non-scroll buttons
+      buttons.forEach((btn) => btn.classList.remove("active-tg"));
+      this.classList.add("active-tg");
     }
   });
-}
-
-
-
+});
