@@ -192,6 +192,7 @@ em {
     max-width: 1360px;
     gap: 2px 15px;
     flex-wrap: wrap;
+    justify-content:center;
 
 }
 
